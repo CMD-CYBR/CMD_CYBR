@@ -52,7 +52,7 @@ export default function SecurityAwarenessGuide() {
             <div id="overview" className="mb-12">
               <h2 className="text-3xl font-bold text-black mb-6">1. Security Awareness Overview</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Security awareness training is a critical component of any organization's cybersecurity strategy. It educates employees 
+                Security awareness training is a critical component of any organization&apos;s cybersecurity strategy. It educates employees 
                 about security threats, best practices, and their role in protecting organizational assets. Human error remains one of 
                 the leading causes of security breaches, making effective training essential.
               </p>

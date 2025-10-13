@@ -51,12 +51,12 @@ export default function ZeroTrustGuide() {
             <div id="overview" className="mb-12">
               <h2 className="text-3xl font-bold text-black mb-6">1. Zero Trust Overview</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Zero Trust is a security framework that requires all users, whether inside or outside the organization's network, 
+                Zero Trust is a security framework that requires all users, whether inside or outside the organization&apos;s network, 
                 to be authenticated, authorized, and continuously validated before being granted or keeping access to applications and data.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Unlike traditional security models that assume everything inside the network is trustworthy, Zero Trust operates 
-                on the principle of "never trust, always verify."
+                on the principle of &quot;never trust, always verify.&quot;
               </p>
               <div className="bg-gray-50 p-6 rounded-lg mb-6">
                 <h3 className="text-lg font-semibold text-black mb-3">Key Benefits</h3>
@@ -179,7 +179,7 @@ export default function ZeroTrustGuide() {
                 </div>
                 <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
                   <h3 className="text-lg font-semibold text-black mb-3">💡 Focus on User Experience</h3>
-                  <p className="text-gray-700">Ensure security measures don't significantly impact productivity. Implement seamless authentication and access controls.</p>
+                  <p className="text-gray-700">Ensure security measures don&apos;t significantly impact productivity. Implement seamless authentication and access controls.</p>
                 </div>
                 <div className="bg-yellow-50 p-6 rounded-lg border-l-4 border-yellow-500">
                   <h3 className="text-lg font-semibold text-black mb-3">⚠️ Regular Security Assessments</h3>

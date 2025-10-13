@@ -16,7 +16,7 @@ export default function OffensiveSecurity() {
               Offensive Security
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed fade-in">
-              Proactive security testing to identify vulnerabilities before attackers do. Our offensive security services help you understand your security posture from an attacker's perspective.
+              Proactive security testing to identify vulnerabilities before attackers do. Our offensive security services help you understand your security posture from an attacker&apos;s perspective.
             </p>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function OffensiveSecurity() {
               Our Offensive Security Services
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Comprehensive security testing services tailored to your organization's needs
+              Comprehensive security testing services tailored to your organization&apos;s needs
             </p>
           </div>
 
@@ -100,7 +100,7 @@ export default function OffensiveSecurity() {
             <div className="bg-black rounded-lg p-6 border border-gray-700">
               <h3 className="text-xl font-bold text-white mb-4">Red Team Exercises</h3>
               <p className="text-gray-300 mb-4">
-                Simulate real-world attacks to test your organization's detection and response capabilities.
+                Simulate real-world attacks to test your organization&apos;s detection and response capabilities.
               </p>
               <ul className="text-sm text-gray-400 space-y-2">
                 <li>• Multi-vector attack simulation</li>

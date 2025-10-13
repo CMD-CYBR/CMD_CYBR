@@ -261,7 +261,7 @@ export default function ManagedDetectionResponse() {
             Protect Your Organization 24/7
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto fade-in">
-            Don't wait for a breach to happen. Our MDR service provides proactive protection 
+            Don&apos;t wait for a breach to happen. Our MDR service provides proactive protection 
             and rapid response to keep your organization secure.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center slide-up">

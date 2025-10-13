@@ -140,7 +140,7 @@ export default function Consulting() {
               </div>
               <h3 className="text-xl font-bold text-black mb-4">Policy Development</h3>
               <p className="text-gray-600">
-                Create comprehensive security policies and procedures tailored to your organization's needs.
+                Create comprehensive security policies and procedures tailored to your organization&apos;s needs.
               </p>
             </div>
 

@@ -16,7 +16,7 @@ export default function AdversarySimulation() {
               Adversary Simulation
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed fade-in">
-              Realistic attack simulations that test your organization's ability to detect, respond to, and recover from sophisticated cyber threats.
+              Realistic attack simulations that test your organization&apos;s ability to detect, respond to, and recover from sophisticated cyber threats.
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function AdversarySimulation() {
             <div className="bg-black rounded-lg p-6 border border-gray-700">
               <h3 className="text-xl font-bold text-white mb-4">Ransomware Simulation</h3>
               <p className="text-gray-300 mb-4">
-                Test your organization's ability to prevent, detect, and respond to ransomware attacks.
+                Test your organization&apos;s ability to prevent, detect, and respond to ransomware attacks.
               </p>
               <ul className="text-sm text-gray-400 space-y-2">
                 <li>• Ransomware deployment simulation</li>

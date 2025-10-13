@@ -16,7 +16,7 @@ export default function VirtualCISO() {
               Virtual CISO
             </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed fade-in">
-              Access senior-level cybersecurity leadership without the full-time commitment. Our Virtual CISO services provide strategic security guidance and oversight tailored to your organization's needs.
+              Access senior-level cybersecurity leadership without the full-time commitment. Our Virtual CISO services provide strategic security guidance and oversight tailored to your organization&apos;s needs.
             </p>
           </div>
         </div>

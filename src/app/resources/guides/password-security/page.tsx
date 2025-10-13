@@ -160,7 +160,7 @@ export default function PasswordSecurityGuide() {
                     <li>• Enable two-factor authentication on your password manager</li>
                     <li>• Regularly update your password manager software</li>
                     <li>• Use reputable, well-reviewed password managers</li>
-                    <li>• Keep your master password secure and don't share it</li>
+                    <li>• Keep your master password secure and don&apos;t share it</li>
                   </ul>
                 </div>
               </div>

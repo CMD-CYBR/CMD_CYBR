@@ -315,7 +315,7 @@ export default function IncidentResponseForensics() {
             Need Immediate Incident Response?
           </h2>
           <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto fade-in">
-            If you're experiencing a security incident right now, don't wait. Our emergency response team is available 24/7.
+            If you&apos;re experiencing a security incident right now, don&apos;t wait. Our emergency response team is available 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center slide-up">
             <button 

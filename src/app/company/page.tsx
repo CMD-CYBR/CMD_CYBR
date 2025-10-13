@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Image from 'next/image'
 
 export default function Company() {
   return (
@@ -78,19 +79,19 @@ export default function Company() {
                 </p>
                 
                 <p>
-                  After spending years in the technology industry, I noticed a significant gap in how small and mid-sized organisations were being supported. Large corporations had access to top-tier cybersecurity consulting and managed security services, while small to mid-market businesses — the backbone of Australia's economy — often lacked the same level of protection. I decided it was time to change that.
+                  After spending years in the technology industry, I noticed a significant gap in how small and mid-sized organisations were being supported. Large corporations had access to top-tier cybersecurity consulting and managed security services, while small to mid-market businesses — the backbone of Australia&apos;s economy — often lacked the same level of protection. I decided it was time to change that.
                 </p>
                 
                 <p>
-                  That's how this company was born — out of a vision to make world-class cybersecurity expertise accessible, practical, and tailored to the needs of growing businesses.
+                  That&apos;s how this company was born — out of a vision to make world-class cybersecurity expertise accessible, practical, and tailored to the needs of growing businesses.
                 </p>
                 
                 <p>
-                  In the early days, we started small, with a handful of passionate professionals and a shared mission: to safeguard the digital future of Australian businesses. We didn't have the biggest team or the flashiest office, but what we did have was commitment — to our clients, to our craft, and to doing what's right.
+                  In the early days, we started small, with a handful of passionate professionals and a shared mission: to safeguard the digital future of Australian businesses. We didn&apos;t have the biggest team or the flashiest office, but what we did have was commitment — to our clients, to our craft, and to doing what&apos;s right.
                 </p>
                 
                 <p>
-                  We built our company on three core principles: <strong className="text-white">trust, integrity, and innovation</strong>. These values guide every decision we make. We take the time to truly understand our clients' challenges, helping them navigate an ever-changing digital landscape with confidence.
+                  We built our company on three core principles: <strong className="text-white">trust, integrity, and innovation</strong>. These values guide every decision we make. We take the time to truly understand our clients&apos; challenges, helping them navigate an ever-changing digital landscape with confidence.
                 </p>
                 
                 <p>
@@ -106,7 +107,7 @@ export default function Company() {
                 </p>
                 
                 <p className="text-white font-semibold">
-                  Together, we're creating a safer digital tomorrow.
+                  Together, we&apos;re creating a safer digital tomorrow.
                 </p>
               </div>
               
@@ -118,29 +119,31 @@ export default function Company() {
             
             <div className="slide-in-right">
               <div className="relative">
-                <div className="bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg p-8 text-white">
-                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden border-2 border-amber-400 shadow-lg">
-                    <img 
+                <div className="bg-gradient-to-br from-gray-800 to-black rounded-lg p-8 text-white border border-gray-600">
+                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden border-2 border-white shadow-lg">
+                    <Image 
                       src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
                       alt="Saima Azhar - Founder & Managing Director"
+                      width={400}
+                      height={400}
                       className="w-full h-full object-cover rounded-full"
                     />
                   </div>
                   <h3 className="text-2xl font-bold text-center mb-2">Saima Azhar</h3>
-                  <p className="text-amber-100 text-center font-semibold mb-6">Founder & Managing Director</p>
+                  <p className="text-gray-200 text-center font-semibold mb-6">Founder & Managing Director</p>
                   
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
-                      <span className="text-amber-100">Cybersecurity Visionary</span>
+                      <span className="text-gray-200">Cybersecurity Visionary</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
-                      <span className="text-amber-100">Business Advocate</span>
+                      <span className="text-gray-200">Business Advocate</span>
                     </div>
                     <div className="flex items-center space-x-3">
                       <div className="w-2 h-2 bg-white rounded-full"></div>
-                      <span className="text-amber-100">Industry Leader</span>
+                      <span className="text-gray-200">Industry Leader</span>
                     </div>
                   </div>
                 </div>

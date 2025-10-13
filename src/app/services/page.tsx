@@ -94,7 +94,7 @@ export default function AllServices() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Adversary Simulation</h3>
               <p className="text-gray-300 mb-4">
-                Realistic attack simulations that test your organization's ability to detect, respond to, and recover from threats.
+                Realistic attack simulations that test your organization&apos;s ability to detect, respond to, and recover from threats.
               </p>
               <ul className="text-sm text-gray-400 space-y-1 mb-4">
                 <li>• APT Simulation</li>
