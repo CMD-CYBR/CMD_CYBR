@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PartnerLogos from '@/components/PartnerLogos'
@@ -42,7 +44,11 @@ export default function Partners() {
               <p className="text-gray-600 mb-6">
                 Proactive threat intelligence and vulnerability management to identify and mitigate risks before they become incidents.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={() => window.location.href = '/partners/continuous-threat-exposure'}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 Learn More
               </button>
             </div>
@@ -58,7 +64,11 @@ export default function Partners() {
               <p className="text-gray-600 mb-6">
                 24/7 security operations with advanced threat detection, analysis, and rapid response capabilities.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={() => window.location.href = '/partners/managed-detection-response'}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 Learn More
               </button>
             </div>
@@ -74,7 +84,11 @@ export default function Partners() {
               <p className="text-gray-600 mb-6">
                 Rapid incident containment, investigation, and recovery services to minimize business impact and restore operations.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={() => window.location.href = '/partners/incident-response'}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 Learn More
               </button>
             </div>

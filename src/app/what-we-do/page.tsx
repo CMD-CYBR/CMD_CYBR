@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -44,7 +46,11 @@ export default function WhatWeDo() {
               <p className="text-gray-600 mb-6">
                 Expert guidance on security strategy, risk assessment, and compliance to strengthen your security posture.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={() => window.location.href = '/what-we-do/consulting'}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 Learn More
               </button>
             </div>
@@ -60,7 +66,11 @@ export default function WhatWeDo() {
               <p className="text-gray-600 mb-6">
                 24/7 monitoring and response to cyber threats with advanced threat hunting capabilities and rapid incident response.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={() => window.location.href = '/what-we-do/mdr'}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 Learn More
               </button>
             </div>
@@ -76,7 +86,11 @@ export default function WhatWeDo() {
               <p className="text-gray-600 mb-6">
                 Rapid response to security incidents with comprehensive digital forensics to investigate, contain, and recover from cyber attacks.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={() => window.location.href = '/what-we-do/incident-response-forensics'}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 Learn More
               </button>
             </div>

@@ -1,3 +1,5 @@
+'use client'
+
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -34,7 +36,10 @@ export default function Resources() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Whitepapers */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 slide-up">
+            <div 
+              className="bg-white rounded-lg p-8 border border-gray-200 slide-up cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-gray-300"
+              onClick={() => window.location.href = '/resources/whitepapers'}
+            >
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 pulse-white">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -44,13 +49,23 @@ export default function Resources() {
               <p className="text-gray-600 mb-6">
                 In-depth research reports and analysis on the latest cybersecurity trends and threats.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.location.href = '/resources/whitepapers';
+                }}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 View All
               </button>
             </div>
 
             {/* Guides */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 slide-up">
+            <div 
+              className="bg-white rounded-lg p-8 border border-gray-200 slide-up cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-gray-300"
+              onClick={() => window.location.href = '/resources/guides'}
+            >
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 pulse-white">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -60,13 +75,23 @@ export default function Resources() {
               <p className="text-gray-600 mb-6">
                 Step-by-step guides to help you implement security best practices and protect your organization.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.location.href = '/resources/guides';
+                }}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 View All
               </button>
             </div>
 
             {/* Webinars */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 slide-up">
+            <div 
+              className="bg-white rounded-lg p-8 border border-gray-200 slide-up cursor-pointer hover:shadow-lg transition-all duration-200 hover:border-gray-300"
+              onClick={() => window.location.href = '/resources/webinars'}
+            >
               <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center mb-6 pulse-white">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -76,7 +101,14 @@ export default function Resources() {
               <p className="text-gray-600 mb-6">
                 Live and recorded webinars featuring industry experts and the latest security insights.
               </p>
-              <button className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300">
+              <button 
+                className="bg-black text-white px-6 py-3 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 border border-gray-300"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.location.href = '/resources/webinars';
+                }}
+                style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+              >
                 View All
               </button>
             </div>
@@ -98,7 +130,10 @@ export default function Resources() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Resource 1 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden slide-up">
+            <div 
+              className="bg-white rounded-lg shadow-lg overflow-hidden slide-up cursor-pointer hover:shadow-xl transition-all duration-200"
+              onClick={() => window.location.href = '/resources/whitepapers'}
+            >
               <div className="h-48 bg-black flex items-center justify-center">
                 <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -113,14 +148,24 @@ export default function Resources() {
                 <p className="text-gray-600 text-sm mb-4">
                   Comprehensive analysis of current cybersecurity threats and trends affecting organizations worldwide.
                 </p>
-                <button className="text-black font-semibold hover:text-gray-600 transition-colors duration-200">
+                <button 
+                  className="text-black font-semibold hover:text-gray-600 transition-colors duration-200"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.location.href = '/resources/whitepapers';
+                  }}
+                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+                >
                   Download PDF →
                 </button>
               </div>
             </div>
 
             {/* Resource 2 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden slide-up">
+            <div 
+              className="bg-white rounded-lg shadow-lg overflow-hidden slide-up cursor-pointer hover:shadow-xl transition-all duration-200"
+              onClick={() => window.location.href = '/resources/guides'}
+            >
               <div className="h-48 bg-black flex items-center justify-center">
                 <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
@@ -135,14 +180,24 @@ export default function Resources() {
                 <p className="text-gray-600 text-sm mb-4">
                   Step-by-step guide to implementing Zero Trust security architecture in your organization.
                 </p>
-                <button className="text-black font-semibold hover:text-gray-600 transition-colors duration-200">
+                <button 
+                  className="text-black font-semibold hover:text-gray-600 transition-colors duration-200"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.location.href = '/resources/guides';
+                  }}
+                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+                >
                   Read More →
                 </button>
               </div>
             </div>
 
             {/* Resource 3 */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden slide-up">
+            <div 
+              className="bg-white rounded-lg shadow-lg overflow-hidden slide-up cursor-pointer hover:shadow-xl transition-all duration-200"
+              onClick={() => window.location.href = '/resources/webinars'}
+            >
               <div className="h-48 bg-black flex items-center justify-center">
                 <svg className="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -157,7 +212,14 @@ export default function Resources() {
                 <p className="text-gray-600 text-sm mb-4">
                   Expert panel discussion on how artificial intelligence is shaping the future of cybersecurity.
                 </p>
-                <button className="text-black font-semibold hover:text-gray-600 transition-colors duration-200">
+                <button 
+                  className="text-black font-semibold hover:text-gray-600 transition-colors duration-200"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    window.location.href = '/resources/webinars';
+                  }}
+                  style={{ pointerEvents: 'auto', zIndex: 10, position: 'relative' }}
+                >
                   Watch Now →
                 </button>
               </div>

@@ -61,7 +61,6 @@ export default function Contact() {
                 <div>
                   <h3 className="text-xl font-semibold text-white mb-4">Contact Information</h3>
                   <div className="space-y-2 text-gray-300">
-                    <p className="text-white font-semibold">T. 1300 211 235</p>
                     <p>E. info@cmdcybr.com.au</p>
                   </div>
                 </div>
@@ -76,14 +75,6 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-4">Emergency Contact</h3>
-                  <div className="space-y-2 text-gray-300">
-                    <p className="text-white font-semibold">Security Incident Hotline</p>
-                    <p className="text-2xl font-bold text-white">1-866-579-2200</p>
-                    <p className="text-sm">Available 24/7 for urgent security matters</p>
-                  </div>
-                </div>
               </div>
 
               {/* Social Media */}

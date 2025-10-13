@@ -59,53 +59,92 @@ export default function Company() {
         </div>
       </section>
 
-      {/* Leadership Team */}
-      <section className="py-20 bg-black">
+      {/* A Word from Our Founder */}
+      <section className="py-20 bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 slide-up">
-              Leadership Team
-            </h2>
-            <p className="text-lg text-gray-300 max-w-3xl mx-auto fade-in">
-              Meet the experts who lead our mission to protect organizations worldwide from cyber threats.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* CEO */}
-            <div className="bg-white rounded-lg p-8 text-center shadow-lg slide-up">
-              <div className="w-24 h-24 bg-black rounded-full mx-auto mb-6 flex items-center justify-center pulse-white">
-                <span className="text-2xl font-bold text-white">JS</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="slide-in-left">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                A Word from Our Founder
+              </h2>
+              <div className="mb-8">
+                <h3 className="text-2xl font-bold text-white mb-2">Saima Azhar</h3>
+                <p className="text-lg text-gray-300 font-semibold">Founder & Managing Director</p>
               </div>
-              <h3 className="text-xl font-bold text-black mb-2">John Smith</h3>
-              <p className="text-gray-600 font-semibold mb-4">Chief Executive Officer</p>
-              <p className="text-gray-600 text-sm">
-                Former cybersecurity director with 15+ years of experience in threat intelligence and security operations.
-              </p>
+              
+              <div className="space-y-6 text-gray-300 leading-relaxed">
+                <p>
+                  My journey began with a simple yet powerful idea – that every business, regardless of size, deserves enterprise-grade cybersecurity.
+                </p>
+                
+                <p>
+                  After spending years in the technology industry, I noticed a significant gap in how small and mid-sized organisations were being supported. Large corporations had access to top-tier cybersecurity consulting and managed security services, while small to mid-market businesses — the backbone of Australia's economy — often lacked the same level of protection. I decided it was time to change that.
+                </p>
+                
+                <p>
+                  That's how this company was born — out of a vision to make world-class cybersecurity expertise accessible, practical, and tailored to the needs of growing businesses.
+                </p>
+                
+                <p>
+                  In the early days, we started small, with a handful of passionate professionals and a shared mission: to safeguard the digital future of Australian businesses. We didn't have the biggest team or the flashiest office, but what we did have was commitment — to our clients, to our craft, and to doing what's right.
+                </p>
+                
+                <p>
+                  We built our company on three core principles: <strong className="text-white">trust, integrity, and innovation</strong>. These values guide every decision we make. We take the time to truly understand our clients' challenges, helping them navigate an ever-changing digital landscape with confidence.
+                </p>
+                
+                <p>
+                  Our consulting services are designed to empower businesses with strategy and insight, while our managed security offerings provide 24/7 protection and peace of mind. But more than that, we see ourselves as partners — working side by side with our clients to build resilience, not just security.
+                </p>
+                
+                <p>
+                  Over the years, our greatest learning has been simple yet profound: when you take care of your people, they take care of your clients. Our talented team is the reason we continue to grow, innovate, and make a meaningful impact in the cybersecurity space.
+                </p>
+                
+                <p>
+                  As we look to the future, our mission remains the same — to help every business, no matter its size, thrive securely in a connected world.
+                </p>
+                
+                <p className="text-white font-semibold">
+                  Together, we're creating a safer digital tomorrow.
+                </p>
+              </div>
+              
+              <div className="mt-8 pt-6 border-t border-gray-700">
+                <p className="text-white font-semibold">— Saima Azhar</p>
+                <p className="text-gray-300">Founder, Cybersecurity Consultant & Advocate</p>
+              </div>
             </div>
-
-            {/* CTO */}
-            <div className="bg-white rounded-lg p-8 text-center shadow-lg slide-up">
-              <div className="w-24 h-24 bg-black rounded-full mx-auto mb-6 flex items-center justify-center pulse-white">
-                <span className="text-2xl font-bold text-white">MJ</span>
+            
+            <div className="slide-in-right">
+              <div className="relative">
+                <div className="bg-gradient-to-br from-amber-600 to-amber-800 rounded-lg p-8 text-white">
+                  <div className="w-32 h-32 bg-white rounded-full mx-auto mb-6 flex items-center justify-center overflow-hidden border-2 border-amber-400 shadow-lg">
+                    <img 
+                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+                      alt="Saima Azhar - Founder & Managing Director"
+                      className="w-full h-full object-cover rounded-full"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold text-center mb-2">Saima Azhar</h3>
+                  <p className="text-amber-100 text-center font-semibold mb-6">Founder & Managing Director</p>
+                  
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                      <span className="text-amber-100">Cybersecurity Visionary</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                      <span className="text-amber-100">Business Advocate</span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                      <div className="w-2 h-2 bg-white rounded-full"></div>
+                      <span className="text-amber-100">Industry Leader</span>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <h3 className="text-xl font-bold text-black mb-2">Maria Johnson</h3>
-              <p className="text-gray-600 font-semibold mb-4">Chief Technology Officer</p>
-              <p className="text-gray-600 text-sm">
-                Technology visionary with expertise in AI-driven security solutions and cloud infrastructure.
-              </p>
-            </div>
-
-            {/* CSO */}
-            <div className="bg-white rounded-lg p-8 text-center shadow-lg slide-up">
-              <div className="w-24 h-24 bg-black rounded-full mx-auto mb-6 flex items-center justify-center pulse-white">
-                <span className="text-2xl font-bold text-white">DB</span>
-              </div>
-              <h3 className="text-xl font-bold text-black mb-2">David Brown</h3>
-              <p className="text-gray-600 font-semibold mb-4">Chief Security Officer</p>
-              <p className="text-gray-600 text-sm">
-                Security strategist with deep expertise in threat hunting and incident response methodologies.
-              </p>
             </div>
           </div>
         </div>
