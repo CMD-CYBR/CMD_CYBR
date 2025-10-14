@@ -365,7 +365,7 @@ export default function SecurityAwarenessGuide() {
                         <li>• Begin regular training schedule</li>
                       </ul>
                     </div>
-                    <div className="border-l-4 border-purple-500 pl-6">
+                    <div className="border-l-4 border-gray-500 pl-6">
                       <h4 className="text-lg font-semibold text-black mb-2">Phase 3: Optimization (Weeks 9-12)</h4>
                       <ul className="space-y-1 text-gray-700 text-sm">
                         <li>• Analyze initial results and feedback</li>

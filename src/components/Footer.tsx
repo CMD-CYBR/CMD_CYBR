@@ -136,7 +136,7 @@ export default function Footer() {
               <div>
                 <h3 className="text-lg font-bold text-white mb-4">Contact</h3>
                 <div className="mb-4">
-                  <a href="https://abr.business.gov.au/ABN/View?abn=29688075505" target="_blank" rel="noopener noreferrer" className="text-blue-400 font-semibold hover:text-blue-300 transition-colors">ABN: 29 688 075 505</a>
+                  <a href="https://abr.business.gov.au/ABN/View?abn=29688075505" target="_blank" rel="noopener noreferrer" className="text-gray-400 font-semibold hover:text-white transition-colors">ABN: 29 688 075 505</a>
                 </div>
                 <div 
                   className="bg-white text-black px-4 sm:px-6 py-3 sm:py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center gap-2 border border-gray-300 w-full sm:w-auto text-sm sm:text-base min-h-[44px] touch-manipulation cursor-pointer"
@@ -166,7 +166,7 @@ export default function Footer() {
                     <span className="text-black text-xs sm:text-sm font-semibold">JAS-ANZ G</span>
                   </a>
                   <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer" className="bg-white px-3 sm:px-4 py-3 sm:py-4 rounded flex items-center gap-2 border border-gray-300 min-h-[44px] hover:bg-gray-100 transition-colors cursor-pointer">
-                    <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-4 h-4 text-gray-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     <span className="text-black text-xs sm:text-sm font-semibold whitespace-nowrap">ISO 27001 CERTIFIED</span>
@@ -188,8 +188,8 @@ export default function Footer() {
                 We acknowledge the Gadigal people of the Eora Nation as the Traditional Owners of the land where we work and live. We pay our respects to Elders past, present and emerging.
               </p>
               <div className="flex items-center space-x-3">
-                <div className="w-8 h-5 bg-gradient-to-r from-black via-yellow-500 to-red-500 rounded-sm"></div>
-                <div className="w-8 h-5 bg-gradient-to-r from-green-500 via-blue-500 to-white rounded-sm"></div>
+                <div className="w-8 h-5 bg-gradient-to-r from-gray-800 via-gray-600 to-gray-400 rounded-sm"></div>
+                <div className="w-8 h-5 bg-gradient-to-r from-gray-600 via-gray-500 to-gray-300 rounded-sm"></div>
               </div>
             </div>
           </div>

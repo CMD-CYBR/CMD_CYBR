@@ -4,6 +4,14 @@ import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
+interface FormErrors {
+  name?: string
+  email?: string
+  subject?: string
+  message?: string
+  inquiryType?: string
+}
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -15,19 +23,96 @@ export default function Contact() {
     inquiryType: 'general'
   })
 
+  const [errors, setErrors] = useState<FormErrors>({})
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {}
+
+    // Required field validation
+    if (!formData.name.trim()) {
+      newErrors.name = 'Full name is required'
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = 'Email address is required'
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = 'Please enter a valid email address'
+    }
+
+    if (!formData.subject.trim()) {
+      newErrors.subject = 'Subject is required'
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = 'Message is required'
+    }
+
+    if (!formData.inquiryType) {
+      newErrors.inquiryType = 'Please select an inquiry type'
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
       [name]: value
     }))
+
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({
+        ...prev,
+        [name]: undefined
+      }))
+    }
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    // You can add your form submission logic here
+    
+    if (!validateForm()) {
+      return
+    }
+
+    setIsSubmitting(true)
+    setSubmitStatus('idle')
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+      
+      if (response.ok) {
+        setSubmitStatus('success')
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          company: '',
+          phone: '',
+          subject: '',
+          message: '',
+          inquiryType: 'general'
+        })
+      } else {
+        setSubmitStatus('error')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitStatus('error')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -101,9 +186,23 @@ export default function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-lg p-8 border border-gray-200 slide-up">
+            <div className="bg-white rounded-lg p-8 border border-gray-200 slide-up relative z-10">
               <h2 className="text-2xl font-bold text-black mb-6">Send us a Message</h2>
-              <form onSubmit={handleSubmit} className="space-y-6">
+              
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                  <p className="text-green-800">Thank you! Your message has been sent successfully. We&apos;ll get back to you soon.</p>
+                </div>
+              )}
+              
+              {submitStatus === 'error' && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg">
+                  <p className="text-red-800">Sorry, there was an error sending your message. Please try again or contact us directly.</p>
+                </div>
+              )}
+
+              <form onSubmit={handleSubmit} className="space-y-6 relative z-20">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -116,9 +215,12 @@ export default function Contact() {
                       required
                       value={formData.name}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white relative z-30 pointer-events-auto ${
+                        errors.name ? 'border-red-500' : 'border-gray-300'
+                      }`}
                       placeholder="Your full name"
                     />
+                    {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
                   </div>
                   <div>
                     <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
@@ -131,9 +233,12 @@ export default function Contact() {
                       required
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white"
+                      className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white relative z-30 pointer-events-auto ${
+                        errors.email ? 'border-red-500' : 'border-gray-300'
+                      }`}
                       placeholder="your.email@company.com"
                     />
+                    {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
                   </div>
                 </div>
 
@@ -148,7 +253,7 @@ export default function Contact() {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white relative z-30 pointer-events-auto"
                       placeholder="Your company name"
                     />
                   </div>
@@ -162,7 +267,7 @@ export default function Contact() {
                       name="phone"
                       value={formData.phone}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent bg-white relative z-30 pointer-events-auto"
                       placeholder="+61 2 1234 5678"
                     />
                   </div>
@@ -178,7 +283,9 @@ export default function Contact() {
                     required
                     value={formData.inquiryType}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:border-transparent relative z-30 pointer-events-auto bg-white text-black ${
+                      errors.inquiryType ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   >
                     <option value="general">General Inquiry</option>
                     <option value="sales">Sales Inquiry</option>
@@ -186,6 +293,7 @@ export default function Contact() {
                     <option value="partnership">Partnership Opportunity</option>
                     <option value="emergency">Security Incident</option>
                   </select>
+                  {errors.inquiryType && <p className="mt-1 text-sm text-red-600">{errors.inquiryType}</p>}
                 </div>
 
                 <div>
@@ -199,9 +307,12 @@ export default function Contact() {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:border-transparent relative z-30 pointer-events-auto bg-white text-black ${
+                      errors.subject ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Brief description of your inquiry"
                   />
+                  {errors.subject && <p className="mt-1 text-sm text-red-600">{errors.subject}</p>}
                 </div>
 
                 <div>
@@ -215,16 +326,24 @@ export default function Contact() {
                     rows={6}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-black focus:border-transparent relative z-30 pointer-events-auto bg-white text-black ${
+                      errors.message ? 'border-red-500' : 'border-gray-300'
+                    }`}
                     placeholder="Please provide details about your inquiry..."
                   />
+                  {errors.message && <p className="mt-1 text-sm text-red-600">{errors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-black text-white px-8 py-4 rounded-lg font-semibold hover:bg-gray-800 transition-colors duration-200 text-lg border border-gray-300"
+                  disabled={isSubmitting}
+                  className={`w-full px-8 py-4 rounded-lg font-semibold transition-colors duration-200 text-lg border border-gray-300 relative z-30 pointer-events-auto ${
+                    isSubmitting
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed'
+                      : 'bg-black text-white hover:bg-gray-800'
+                  }`}
                 >
-                  Send Message
+                  {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
               </form>
             </div>

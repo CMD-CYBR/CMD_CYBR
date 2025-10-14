@@ -146,7 +146,7 @@ export default function IncidentResponseGuide() {
                     <li>• Validate system integrity and functionality</li>
                   </ul>
                 </div>
-                <div className="border-l-4 border-purple-500 pl-6">
+                <div className="border-l-4 border-gray-500 pl-6">
                   <h3 className="text-xl font-semibold text-black mb-2">Phase 6: Lessons Learned</h3>
                   <p className="text-gray-700 mb-2">Analyze the incident and improve future response capabilities.</p>
                   <ul className="space-y-1 text-gray-700 text-sm">

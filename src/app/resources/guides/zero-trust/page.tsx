@@ -185,7 +185,7 @@ export default function ZeroTrustGuide() {
                   <h3 className="text-lg font-semibold text-black mb-3">⚠️ Regular Security Assessments</h3>
                   <p className="text-gray-700">Conduct periodic reviews and penetration testing to validate your Zero Trust implementation and identify gaps.</p>
                 </div>
-                <div className="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                <div className="bg-gray-50 p-6 rounded-lg border-l-4 border-gray-500">
                   <h3 className="text-lg font-semibold text-black mb-3">🔄 Continuous Improvement</h3>
                   <p className="text-gray-700">Regularly update policies, technologies, and processes based on threat intelligence and organizational changes.</p>
                 </div>

@@ -33,20 +33,21 @@ export default function Loader({ onComplete }: LoaderProps) {
   if (!isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900">
-      {/* Animated Background Grid */}
-      <div className="absolute inset-0 opacity-20">
-        <div className="cyber-grid"></div>
-      </div>
-      
-      {/* Floating Particles */}
-      <div className="absolute inset-0">
-        <div className="cyber-particle" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
-        <div className="cyber-particle" style={{top: '30%', right: '15%', animationDelay: '1s'}}></div>
-        <div className="cyber-particle" style={{top: '60%', left: '20%', animationDelay: '2s'}}></div>
-        <div className="cyber-particle" style={{top: '70%', right: '25%', animationDelay: '3s'}}></div>
-        <div className="cyber-particle" style={{top: '40%', left: '50%', animationDelay: '4s'}}></div>
-        <div className="cyber-particle" style={{top: '80%', left: '70%', animationDelay: '5s'}}></div>
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
+      {/* Animated Background */}
+      <div className="absolute inset-0 w-full h-full">
+        {/* Base dark black background */}
+        <div className="absolute inset-0" style={{backgroundColor: '#000000'}}></div>
+        
+        {/* Floating Particles */}
+        <div className="absolute inset-0">
+          <div className="cyber-particle" style={{top: '20%', left: '10%', animationDelay: '0s'}}></div>
+          <div className="cyber-particle" style={{top: '30%', right: '15%', animationDelay: '1s'}}></div>
+          <div className="cyber-particle" style={{top: '60%', left: '20%', animationDelay: '2s'}}></div>
+          <div className="cyber-particle" style={{top: '70%', right: '25%', animationDelay: '3s'}}></div>
+          <div className="cyber-particle" style={{top: '40%', left: '50%', animationDelay: '4s'}}></div>
+          <div className="cyber-particle" style={{top: '80%', left: '70%', animationDelay: '5s'}}></div>
+        </div>
       </div>
 
       {/* Main Loader Content */}
@@ -149,7 +150,7 @@ export default function Loader({ onComplete }: LoaderProps) {
           </div>
           <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
             <div 
-              className="h-full bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-full transition-all duration-300 ease-out relative"
+              className="h-full bg-gradient-to-r from-gray-400 via-gray-500 to-gray-600 rounded-full transition-all duration-300 ease-out relative"
               style={{ width: `${progress}%` }}
             >
               {/* Animated shine effect */}
@@ -176,11 +177,6 @@ export default function Loader({ onComplete }: LoaderProps) {
         </div>
       </div>
 
-      {/* Scanning Lines */}
-      <div className="absolute inset-0">
-        <div className="cyber-scan" style={{animationDelay: '0s'}}></div>
-        <div className="cyber-scan" style={{animationDelay: '2s'}}></div>
-      </div>
     </div>
   );
 }

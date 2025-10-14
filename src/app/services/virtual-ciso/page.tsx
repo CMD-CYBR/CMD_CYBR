@@ -33,15 +33,15 @@ export default function VirtualCISO() {
               </p>
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
                   <p className="text-gray-300">Strategic security planning and governance</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
                   <p className="text-gray-300">Board and executive communication</p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                  <div className="w-2 h-2 bg-white rounded-full mt-2"></div>
                   <p className="text-gray-300">Risk management and compliance oversight</p>
                 </div>
               </div>

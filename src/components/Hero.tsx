@@ -3,13 +3,8 @@ export default function Hero() {
     <main className="relative flex items-center py-20 min-h-screen overflow-hidden animated-bg">
       {/* Animated Background */}
       <div className="absolute inset-0 w-full h-full">
-        {/* Base black background */}
-        <div className="absolute inset-0 bg-black"></div>
-        
-        {/* Animated grid pattern */}
-        <div className="absolute inset-0 opacity-30">
-          <div className="cyber-grid"></div>
-        </div>
+        {/* Base dark black background */}
+        <div className="absolute inset-0" style={{backgroundColor: '#000000'}}></div>
         
         {/* Floating data nodes */}
         <div className="absolute inset-0">
@@ -44,7 +39,7 @@ export default function Hero() {
         </div>
         
         {/* Subtle overlay for better text readability */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0" style={{backgroundColor: 'rgba(0, 0, 0, 0.1)'}}></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 pt-24">

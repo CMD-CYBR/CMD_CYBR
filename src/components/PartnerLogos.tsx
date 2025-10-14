@@ -37,7 +37,7 @@ function PartnerLogo({ name, className = "" }: PartnerLogoProps) {
       </svg>
     ),
     SentinelOne: (
-      <span className="text-purple-600 font-bold text-lg">SentinelOne</span>
+      <span className="text-gray-600 font-bold text-lg">SentinelOne</span>
     )
   };
 
