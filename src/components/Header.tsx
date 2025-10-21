@@ -3,10 +3,20 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
+
+  // Function to check if a link is active
+  const isActive = (path: string) => {
+    if (path === '/what-we-do' || path === '/services') {
+      return pathname.startsWith('/what-we-do') || pathname.startsWith('/services')
+    }
+    return pathname.startsWith(path)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,45 +50,65 @@ export default function Header() {
           <nav className="hidden md:flex items-center space-x-8">
             <div className="relative group">
               <a href="/what-we-do" className={`transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/what-we-do')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Services
               </a>
             </div>
             <div className="relative group">
               <a href="/how-we-do-it" className={`transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/how-we-do-it')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 How we do it
               </a>
             </div>
             <div className="relative group">
               <a href="/resources" className={`transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/resources')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Resources
               </a>
             </div>
             <div className="relative group">
               <a href="/company" className={`transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/company')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Company
               </a>
             </div>
             <div className="relative group">
               <a href="/partners" className={`transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/partners')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Partners
               </a>
@@ -117,37 +147,57 @@ export default function Header() {
                 : 'bg-black'
             }`}>
               <a href="/what-we-do" className={`block px-3 py-2 transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/what-we-do')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Services
               </a>
               <a href="/how-we-do-it" className={`block px-3 py-2 transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/how-we-do-it')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 How we do it
               </a>
               <a href="/resources" className={`block px-3 py-2 transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/resources')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Resources
               </a>
               <a href="/company" className={`block px-3 py-2 transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/company')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Company
               </a>
               <a href="/partners" className={`block px-3 py-2 transition-colors duration-700 ${
-                isScrolled 
-                  ? 'text-black hover:text-gray-600' 
-                  : 'text-white hover:text-gray-300'
+                isActive('/partners')
+                  ? isScrolled 
+                    ? 'text-black font-semibold border-b-2 border-black' 
+                    : 'text-white font-semibold border-b-2 border-white'
+                  : isScrolled 
+                    ? 'text-black hover:text-gray-600' 
+                    : 'text-white hover:text-gray-300'
               }`}>
                 Partners
               </a>

@@ -17,7 +17,7 @@ export default function CTABanner() {
           </p>
           
           {/* CTA Button */}
-          <a href="/contact" className="bg-white text-black px-8 py-4 rounded-md font-semibold hover:bg-gray-200 transition-colors duration-200 text-lg flex items-center gap-2 mx-auto inline-block border border-gray-300 slide-up">
+          <a href="/contact" className="bg-white text-black px-8 py-4 rounded-md font-semibold hover:bg-gray-200 transition-colors duration-200 text-lg flex items-center justify-center gap-3 mx-auto inline-flex border border-gray-300 slide-up">
             GET STARTED
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
