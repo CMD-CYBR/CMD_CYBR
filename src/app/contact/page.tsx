@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
@@ -84,15 +85,63 @@ export default function Contact() {
     setSubmitStatus('idle')
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      })
-      
-      if (response.ok) {
+      // Check if EmailJS is properly configured
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        console.error('EmailJS not configured. Please set up environment variables.')
+        // Fallback to API route if EmailJS is not configured
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+        
+        if (response.ok) {
+          setSubmitStatus('success')
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            subject: '',
+            message: '',
+            inquiryType: 'general'
+          })
+        } else {
+          setSubmitStatus('error')
+        }
+        return
+      }
+
+      // Initialize EmailJS with your public key
+      emailjs.init(publicKey)
+
+      // Prepare template parameters
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        company: formData.company || 'Not provided',
+        phone: formData.phone || 'Not provided',
+        inquiry_type: formData.inquiryType,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: 'info@cmdcybr.com.au', // Your business email
+        reply_to: formData.email,
+      }
+
+      // Send email using EmailJS
+      const response = await emailjs.send(
+        serviceId,
+        templateId,
+        templateParams
+      )
+
+      if (response.status === 200) {
         setSubmitStatus('success')
         // Reset form
         setFormData({
@@ -105,11 +154,39 @@ export default function Contact() {
           inquiryType: 'general'
         })
       } else {
+        console.error('EmailJS response error:', response)
         setSubmitStatus('error')
       }
     } catch (error) {
-      console.error('Form submission error:', error)
-      setSubmitStatus('error')
+      console.error('EmailJS error:', error)
+      // Try fallback to API route
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        })
+        
+        if (response.ok) {
+          setSubmitStatus('success')
+          setFormData({
+            name: '',
+            email: '',
+            company: '',
+            phone: '',
+            subject: '',
+            message: '',
+            inquiryType: 'general'
+          })
+        } else {
+          setSubmitStatus('error')
+        }
+      } catch (fallbackError) {
+        console.error('Fallback API error:', fallbackError)
+        setSubmitStatus('error')
+      }
     } finally {
       setIsSubmitting(false)
     }
