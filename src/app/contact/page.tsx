@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Script from 'next/script'
 import emailjs from '@emailjs/browser'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -192,8 +193,32 @@ export default function Contact() {
     }
   }
 
+  const contactPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact CMD:CYBR',
+    description: 'Get in touch with CMD:CYBR for cybersecurity solutions, MDR services, and expert consultation.',
+    url: 'https://www.cmdcybr.com.au/contact',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'CMD:CYBR',
+      email: 'info@cmdcybr.com.au',
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'AU',
+      },
+    },
+  }
+
   return (
     <div className="min-h-screen bg-black animated-bg">
+      <Script
+        id="contact-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(contactPageSchema),
+        }}
+      />
       <Header />
       
       {/* Hero Section */}

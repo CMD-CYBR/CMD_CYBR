@@ -1,10 +1,64 @@
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
+import Script from 'next/script'
+
+export const metadata: Metadata = {
+  title: 'About Us',
+  description: 'Learn about CMD:CYBR, a leading cybersecurity company in Australia. Founded by Saima Azhar, we provide comprehensive cybersecurity solutions, MDR services, and expert consulting to protect organizations from evolving digital threats.',
+  openGraph: {
+    title: 'About CMD:CYBR - Leading Cybersecurity Company in Australia',
+    description: 'Learn about CMD:CYBR, founded by Saima Azhar. We provide comprehensive cybersecurity solutions, MDR services, and expert consulting.',
+    url: 'https://www.cmdcybr.com.au/company',
+    images: [
+      {
+        url: '/saima-azhar.png',
+        width: 1200,
+        height: 630,
+        alt: 'Saima Azhar - Founder & Managing Director of CMD:CYBR',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About CMD:CYBR - Leading Cybersecurity Company',
+    description: 'Learn about CMD:CYBR, founded by Saima Azhar. We provide comprehensive cybersecurity solutions and expert consulting.',
+  },
+  alternates: {
+    canonical: 'https://www.cmdcybr.com.au/company',
+  },
+}
 
 export default function Company() {
+  const aboutPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AboutPage',
+    name: 'About CMD:CYBR',
+    description: 'CMD:CYBR is a leading cybersecurity company in Australia, providing comprehensive cybersecurity solutions, MDR services, and expert consulting.',
+    url: 'https://www.cmdcybr.com.au/company',
+    mainEntity: {
+      '@type': 'Organization',
+      name: 'CMD:CYBR',
+      founder: {
+        '@type': 'Person',
+        name: 'Saima Azhar',
+        jobTitle: 'Founder & Managing Director',
+      },
+      description: 'Leading cybersecurity solutions and managed security services provider in Australia',
+      url: 'https://www.cmdcybr.com.au',
+      email: 'info@cmdcybr.com.au',
+    },
+  }
   return (
     <div className="min-h-screen bg-black animated-bg">
+      <Script
+        id="about-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(aboutPageSchema),
+        }}
+      />
       <Header />
       
       {/* Hero Section */}
