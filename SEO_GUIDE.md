@@ -36,22 +36,6 @@
 - Robots: Search engine indexing instructions
 ```
 
-### **Open Graph Tags**
-- `og:type` - Website type
-- `og:title` - Page title for social sharing
-- `og:description` - Description for social sharing
-- `og:image` - Social media preview image
-- `og:url` - Canonical URL
-- `og:locale` - Language/region (en_AU)
-
-### **Twitter Card Tags**
-- `twitter:card` - Card type (summary_large_image)
-- `twitter:title` - Title for Twitter
-- `twitter:description` - Description for Twitter
-- `twitter:image` - Image for Twitter preview
-
-## 🔍 Structured Data (Schema.org)
-
 ### **Organization Schema**
 - Company name, description, URL
 - Contact information
