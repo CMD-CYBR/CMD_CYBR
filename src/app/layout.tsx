@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import "./globals.css";
 import BackToTop from "../components/BackToTop";
 import SEO from "../components/SEO";
+import CanonicalURL from "../components/CanonicalURL";
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.cmdcybr.com.au'),
@@ -9,23 +10,62 @@ export const metadata: Metadata = {
     default: 'CMD:CYBR - Leading Cybersecurity Solutions & Managed Security Services',
     template: '%s | CMD:CYBR'
   },
-  description: 'CMD:CYBR provides comprehensive cybersecurity solutions including MDR services, incident response, threat hunting, and managed security services. Protect your organization with expert cybersecurity consulting.',
+  description: 'CMD:CYBR provides comprehensive cybersecurity solutions, threat detection, and security response services. Expert incident response, threat hunting, MDR services, and managed security services in Australia. Contact us for cybersecurity consulting and protection.',
   keywords: [
+    // Core brand and services
+    'CMD:CYBR',
+    'cmdcybr',
     'cybersecurity',
+    'cyber security',
+    'cyber',
+    'security',
+    'services',
+    'contact',
+    
+    // Threat and detection
+    'threat',
+    'threats',
+    'threat detection',
+    'threat hunting',
+    'threat response',
+    'detection',
     'managed detection and response',
     'MDR services',
+    'MDR',
+    
+    // Response and incident management
+    'response',
     'incident response',
-    'threat hunting',
-    'cybersecurity consulting',
+    'security response',
+    'threat response',
+    'cyber response',
+    
+    // Managed services
     'managed security services',
+    'managed detection',
+    'managed response',
     'security operations center',
     'SOC support',
+    'SOC',
+    
+    // Consulting and advisory
+    'cybersecurity consulting',
+    'cyber advisory',
+    'security consulting',
     'virtual CISO',
+    'CISO',
+    
+    // Security operations
     'adversary simulation',
     'offensive security',
-    'cyber advisory',
+    'penetration testing',
+    'security assessment',
+    
+    // Location
     'Australia cybersecurity',
-    'CMD:CYBR'
+    'Australian cybersecurity',
+    'cybersecurity Australia',
+    'cyber security Australia'
   ],
   authors: [{ name: 'CMD:CYBR' }],
   creator: 'CMD:CYBR',
@@ -44,12 +84,14 @@ export const metadata: Metadata = {
     description: 'Protect your organization with expert cybersecurity solutions. MDR services, incident response, threat hunting, and managed security services in Australia.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: 'https://www.cmdcybr.com.au/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'CMD:CYBR - Cybersecurity Solutions',
+        type: 'image/jpeg',
       },
     ],
+    countryName: 'Australia',
   },
   twitter: {
     card: 'summary_large_image',
@@ -94,9 +136,9 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/favicon.svg" />
         <meta name="theme-color" content="#000000" />
         <meta name="msapplication-TileColor" content="#000000" />
-        <link rel="canonical" href="https://www.cmdcybr.com.au" />
       </head>
       <body className="antialiased" suppressHydrationWarning={true}>
+        <CanonicalURL />
         <SEO 
           type="Organization"
           contactPoint={{

@@ -6,7 +6,22 @@ const nextConfig: NextConfig = {
   },
   images: {
     unoptimized: true
-  }
+  },
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'cmdcybr.com.au',
+          },
+        ],
+        destination: 'https://www.cmdcybr.com.au/:path*',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;

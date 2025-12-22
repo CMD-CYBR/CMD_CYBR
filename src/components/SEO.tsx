@@ -21,30 +21,44 @@ export default function SEO({
   logo = 'https://www.cmdcybr.com.au/logo.png',
   contactPoint
 }: SEOProps) {
-  const organizationSchema = {
+  const organizationSchema: any = {
     '@context': 'https://schema.org',
     '@type': type,
     name: name,
     description: description,
     url: url,
-    logo: logo,
+    logo: {
+      '@type': 'ImageObject',
+      url: logo,
+    },
     sameAs: [
-      // Add your social media URLs here
+      // Add your social media URLs here when available
       // 'https://www.linkedin.com/company/cmdcybr',
       // 'https://twitter.com/cmdcybr',
       // 'https://www.facebook.com/cmdcybr',
     ],
-    contactPoint: contactPoint ? {
-      '@type': 'ContactPoint',
-      telephone: contactPoint.telephone,
-      contactType: contactPoint.contactType,
-      email: contactPoint.email,
-    } : undefined,
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'AU',
       addressLocality: 'Australia',
     },
+  }
+
+  // Add contact point if provided
+  if (contactPoint) {
+    organizationSchema.contactPoint = {
+      '@type': 'ContactPoint',
+      contactType: contactPoint.contactType || 'Customer Service',
+      email: contactPoint.email || 'info@cmdcybr.com.au',
+      ...(contactPoint.telephone && { telephone: contactPoint.telephone }),
+    }
+  } else {
+    // Default contact point
+    organizationSchema.contactPoint = {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      email: 'info@cmdcybr.com.au',
+    }
   }
 
   const websiteSchema = {

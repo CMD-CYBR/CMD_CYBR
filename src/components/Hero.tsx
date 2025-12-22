@@ -57,7 +57,7 @@ export default function Hero() {
               </span>
             </h1>
             <p className="text-base text-gray-300 mb-6 max-w-2xl leading-relaxed fade-in">
-              CMD:CYBR&apos;s comprehensive security arsenal, your business stays fortified 24/7 through elite-level threat detection and response—shutting down cyber threats before they strike.
+              CMD:CYBR&apos;s comprehensive security arsenal, your business stays fortified 24/7 through elite-level <a href="/what-we-do/mdr" className="text-white underline hover:text-gray-200">threat detection</a> and <a href="/what-we-do/incident-response-forensics" className="text-white underline hover:text-gray-200">response</a>—shutting down <a href="/resources/guides/incident-response" className="text-white underline hover:text-gray-200">cyber threats</a> before they strike. Learn more about our <a href="/what-we-do" className="text-white underline hover:text-gray-200">cybersecurity services</a> and <a href="/partners" className="text-white underline hover:text-gray-200">technology partners</a>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 slide-up">
@@ -66,6 +66,9 @@ export default function Hero() {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
+              </a>
+              <a href="/what-we-do" className="bg-transparent border-2 border-white text-white px-10 py-5 rounded-md font-semibold hover:bg-white hover:text-black transition-all duration-300 flex items-center gap-3 w-fit text-lg transform hover:scale-105">
+                OUR SERVICES
               </a>
             </div>
           </div>

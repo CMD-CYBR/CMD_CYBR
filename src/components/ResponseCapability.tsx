@@ -96,13 +96,19 @@ export default function ResponseCapability() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center">
+        <div className="text-center space-y-4">
           <a 
-            href="#" 
-            className="text-white font-semibold hover:text-gray-300 transition-colors duration-200 uppercase tracking-wider"
+            href="/what-we-do/incident-response-forensics" 
+            className="text-white font-semibold hover:text-gray-300 transition-colors duration-200 uppercase tracking-wider block"
           >
             LEARN MORE ABOUT CMD:CYBR RESPONSE AND REMEDIATION
           </a>
+          <div className="text-gray-400 text-sm max-w-3xl mx-auto">
+            <p>
+              For more information on incident response best practices, visit our <a href="/resources/guides/incident-response" className="text-white underline hover:text-gray-200">incident response guide</a> or explore <a href="/services/incident-response" className="text-white underline hover:text-gray-200">our incident response services</a>. 
+              Learn about industry standards from <a href="https://www.nist.gov/cyberframework" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-gray-200">NIST Cybersecurity Framework</a> and <a href="https://www.iso.org/isoiec-27001-information-security.html" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-gray-200">ISO 27001</a>.
+            </p>
+          </div>
         </div>
       </div>
     </section>

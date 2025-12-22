@@ -28,7 +28,7 @@ export default function ThreatHunting() {
         {/* Description Paragraph */}
         <div className="text-center mb-16 max-w-4xl mx-auto">
           <p className="text-lg text-gray-300 leading-relaxed fade-in">
-            Staffed with Elite Threat Hunters and experienced Cyber Analysts, our global 24/7 Security Operations Centers (SOCs) are focused on responding to high priority security events by driving human-led threat investigations to hunt, contain, and respond to known and unknown threats.
+            Staffed with Elite Threat Hunters and experienced Cyber Analysts, our global 24/7 <a href="/services/soc-support" className="text-white underline hover:text-gray-200">Security Operations Centers (SOCs)</a> are focused on responding to high priority security events by driving human-led <a href="/what-we-do/mdr" className="text-white underline hover:text-gray-200">threat investigations</a> to hunt, contain, and respond to known and unknown threats. Learn more about our <a href="/services/mdr-service" className="text-white underline hover:text-gray-200">MDR services</a> and <a href="/how-we-do-it" className="text-white underline hover:text-gray-200">threat hunting methodology</a>. For additional resources, explore <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-gray-200">CISA cybersecurity advisories</a> and <a href="https://www.ncsc.gov.uk/" target="_blank" rel="noopener noreferrer" className="text-white underline hover:text-gray-200">NCSC guidance</a>.
           </p>
         </div>
 

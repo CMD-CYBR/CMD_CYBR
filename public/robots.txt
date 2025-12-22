@@ -1,0 +1,17 @@
+# robots.txt for CMD:CYBR
+# https://www.cmdcybr.com.au/robots.txt
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /.next/
+
+# Sitemap location
+Sitemap: https://www.cmdcybr.com.au/sitemap.xml
+
+# Crawl-delay (optional, adjust as needed)
+Crawl-delay: 1
+
